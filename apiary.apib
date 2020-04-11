@@ -1,80 +1,37 @@
-FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
-
 # Sekolah FE
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+Daftar Pasien
 
-## Questions Collection [/questions]
-
-### List All Questions [GET]
-
+## Get Patient List [/patient-list]
+### Get All Patient List [GET]
 + Response 200 (application/json)
 
         [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
+                "id": "0000021",
+                "store_name": "Toko Pak Haji Miun",
+                "phone_number": "+6288768766876",
+                "customer_name": "Haji Jaimal Sodikin",
+                "customer_nickname": "Bang Sodok",
+                "id_card_number": "873821793129381231",
+                "member_id": "8798798",
+                "shipping_method": "pickup",
+                "membership_level": "gold",
+                "online_shop_access": true,
+                "liability": {
+                    "limit": "2000000",
+                    "current": "213200"
+                },
+                "notes": "catatan",
+                "address": {
+                    "street": "Jl. Bonatirta",
+                    "street_number": "Jl. Bonatirta",
+                    "village": "Kelurahan Adi Sumarwo",
+                    "sub_district": "Kecamatan Tulong Agung",
+                    "district": "Kabupaten Congor",
+                    "city": "Kota Jakarta",
+                    "province": "DKI Jakarta",
+                    "zipcode": "231132"
+                }
             }
         ]
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
-
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
-
-    + Body
-
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
