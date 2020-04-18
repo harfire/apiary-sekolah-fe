@@ -1,5 +1,7 @@
 # Sekolah FE
 
+Daftar Pasien
+
 ## Get Patient List [/patient-list]
 ### Get All Patient List [GET]
 + Response 200 (application/json)
@@ -707,6 +709,33 @@
             }
         ]
 
+### Add patient [POST]
++ Request (application/json)
+
+        {
+            "id": 0,
+            "nama": "",
+            "umur": 0,
+            "status": "",
+            "kota": ""
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /patient/add
+
+    + Body
+
+            {
+                "id": 0,
+                "nama": "",
+                "umur": 0,
+                "status": "",
+                "kota": ""
+            }
+
 ## Get City List [/city-list]
 ### Get All City List [GET]
 + Response 200 (application/json)
@@ -813,44 +842,14 @@
             "Yogyakarta"
         ]
 
-### Create a New Question [POST]
+## Get Patient Status List [/patient-status-list]
+### Get All Patient Status List [GET]
++ Response 200 (application/json)
 
-+ Request (application/json)
-
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
-
-    + Body
-
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
+        [
+            "Positif",
+            "Negatif",
+            "Belum Diketahui",
+            "Meniggal",
+            "Sembuh"
+        ]
